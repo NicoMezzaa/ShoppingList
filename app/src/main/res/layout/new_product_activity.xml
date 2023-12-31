@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lavender">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="350dp"
+        android:layout_height="280dp"
+        android:src="@drawable/ic_product"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/edit_text_product_name"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.3"
+        android:contentDescription="TODO" />
+
+    <EditText
+        android:id="@+id/edit_text_product_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/nomeprodotto"
+        android:inputType="text"
+        android:maxLength="20"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:autofillHints=""
+        android:gravity="center_horizontal" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group_categories"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/button_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_text_quantity"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_category_1"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/frutta_e_verdura"
+            android:textColor="@color/black"
+            app:chipIcon="@drawable/ic_fruits_vegetables"
+            app:chipIconEnabled="true"
+            app:chipSurfaceColor="@color/chip_surface_color" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_category_2"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/salumi_e_latticini"
+            android:textColor="@color/black"
+            app:chipIcon="@drawable/dairy_products_deli_meats"
+            app:chipIconEnabled="true"
+            app:chipSurfaceColor="@color/chip_surface_color" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_category_3"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/carne_e_pesce"
+            android:textColor="@color/black"
+            app:chipIcon="@drawable/meats_fish"
+            app:chipIconEnabled="true"
+            app:chipSurfaceColor="@color/chip_surface_color" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_category_4"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/pasta_riso_e_legumi"
+            android:textColor="@color/black"
+            app:chipIcon="@drawable/pasta_rice_legumes"
+            app:chipIconEnabled="true"
+            app:chipSurfaceColor="@color/chip_surface_color" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_category_5"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/pane_e_dolci"
+            android:textColor="@color/black"
+            app:chipIcon="@drawable/bread_pastries"
+            app:chipIconEnabled="true"
+            app:chipSurfaceColor="@color/chip_surface_color" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_category_6"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/bere"
+            android:textColor="@color/black"
+            app:chipIcon="@drawable/drink"
+            app:chipIconEnabled="true"
+            app:chipSurfaceColor="@color/chip_surface_color" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_category_7"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/altro"
+            android:textColor="@color/black"
+            app:chipIcon="@drawable/others"
+            app:chipIconEnabled="true"
+            app:chipSurfaceColor="@color/chip_surface_color" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <EditText
+        android:id="@+id/edit_text_quantity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="@string/quantitaa"
+        android:maxLength="20"
+        android:inputType="number"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/edit_text_price"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:autofillHints=""
+        android:gravity="center_horizontal" />
+
+    <EditText
+        android:id="@+id/edit_text_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:hint="@string/prezzo_facoltativo"
+        android:maxLength="20"
+        android:inputType="numberDecimal"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/edit_text_product_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:autofillHints=""
+        android:gravity="center_horizontal" />
+
+    <Button
+        android:id="@+id/button_back"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="goBack"
+        android:text="@string/indietro"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_confirm_product"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_confirm_product"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="confirmProduct"
+        android:text="@string/confermaa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_back" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

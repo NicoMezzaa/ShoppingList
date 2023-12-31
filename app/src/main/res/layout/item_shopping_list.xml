@@ -1,0 +1,140 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="@drawable/item_border">
+
+    <TextView
+        android:id="@+id/text_view_product_name_label"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:gravity="start|center_vertical"
+        android:text="@string/nome_prodotto"
+        android:textColor="@android:color/black"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/text_view_product_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_view_product_name"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:gravity="start|center_vertical"
+        android:textAlignment="textStart"
+        android:textColor="@android:color/black"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/text_view_product_name_label"
+        app:layout_constraintTop_toTopOf="@id/text_view_product_name_label" />
+
+    <TextView
+        android:id="@+id/text_view_product_price_label"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:gravity="start|center_vertical"
+        android:text="@string/prezzo"
+        android:textColor="@android:color/black"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/text_view_product_price"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_view_product_name_label" />
+
+    <TextView
+        android:id="@+id/text_view_product_price"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:gravity="start|center_vertical"
+        android:textAlignment="textStart"
+        android:textColor="@android:color/black"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/text_view_product_price_label"
+        app:layout_constraintTop_toTopOf="@id/text_view_product_price_label" />
+
+    <TextView
+        android:id="@+id/text_view_product_quantity_label"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:gravity="start|center_vertical"
+        android:text="@string/quantit"
+        android:textColor="@android:color/black"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/text_view_product_quantity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_view_product_price_label" />
+
+    <TextView
+        android:id="@+id/text_view_product_quantity"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:gravity="start|center_vertical"
+        android:textAlignment="textStart"
+        android:textColor="@android:color/black"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/text_view_product_quantity_label"
+        app:layout_constraintTop_toTopOf="@id/text_view_product_quantity_label" />
+
+    <TextView
+        android:id="@+id/text_view_product_category_label"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:gravity="start|center_vertical"
+        android:text="@string/categoria"
+        android:textColor="@android:color/black"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/text_view_product_category"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_view_product_quantity_label" />
+
+    <TextView
+        android:id="@+id/text_view_product_category"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:gravity="start|center_vertical"
+        android:textAlignment="textStart"
+        android:textColor="@android:color/black"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/text_view_product_category_label"
+        app:layout_constraintTop_toTopOf="@id/text_view_product_category_label" />
+
+    <ImageButton
+        android:id="@+id/button_delete"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:backgroundTint="@color/black"
+        android:importantForAccessibility="no"
+        android:onClick="deleteProduct"
+        android:padding="8dp"
+        android:src="@drawable/ic_delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/button_edit"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:backgroundTint="@color/black"
+        android:importantForAccessibility="no"
+        android:onClick="editProduct"
+        android:padding="8dp"
+        android:src="@drawable/ic_edit"
+        app:layout_constraintEnd_toStartOf="@id/button_delete"
+        app:layout_constraintTop_toTopOf="@id/button_delete"
+        app:layout_constraintBottom_toBottomOf="@id/button_delete"
+        android:layout_marginEnd="8dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

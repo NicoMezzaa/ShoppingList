@@ -1,0 +1,33 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/option_all"
+        android:title="@string/Mostra_tutti" />
+
+    <item
+        android:id="@+id/option_fruits_vegetables"
+        android:title="@string/Frutta_e_verdura" />
+
+    <item
+        android:id="@+id/option_delicatessen_dairy"
+        android:title="@string/Salumi_e_latticini" />
+
+    <item
+        android:id="@+id/option_meat_fish"
+        android:title="@string/Carne_e_pesce" />
+
+    <item
+        android:id="@+id/option_pasta_rice_legumes"
+        android:title="@string/Pasta_riso_e_legumi" />
+
+    <item
+        android:id="@+id/option_bread_sweets"
+        android:title="@string/Pane_e_dolci" />
+
+    <item
+        android:id="@+id/option_drinks"
+        android:title="@string/Bere" />
+
+    <item
+        android:id="@+id/option_other"
+        android:title="@string/Altro" />
+</menu>
