@@ -85,24 +85,33 @@ public class ListDetailActivity extends AppCompatActivity {
     }
 
     public void deleteProduct(View view) {
-        // ottieni il riferimento all'elemento della RecyclerView cliccato
-        View parentView = (View) view.getParent();
-        RecyclerView recyclerView = (RecyclerView) parentView.getParent();
-        int position = recyclerView.getChildAdapterPosition(parentView);
+        new Thread(() -> {
+            ProductDatabase productDatabase = Room.databaseBuilder(getApplicationContext(),
+                            ProductDatabase.class, "product_database")
+                    .build();
+            ProductDao productDao = productDatabase.productDao();
 
-        // ottieni la lista di prodotti dall'adapter
-        ProductAdapter adapter = (ProductAdapter) recyclerView.getAdapter();
-        assert adapter != null;
-        List<ProductEntity> products = adapter.getProductList();
+            View parentView = (View) view.getParent();
+            RecyclerView recyclerView = (RecyclerView) parentView.getParent();
+            int position = recyclerView.getChildAdapterPosition(parentView);
 
-        // verifica se è rimasto un solo prodotto nella lista
-        if (products.size() <= 1) {
-            // se è rimasto un solo prodotto, mostra un messaggio all'utente o esegui altre azioni
-            Toast.makeText(this, "Devi mantenere almeno un prodotto nella lista", Toast.LENGTH_SHORT).show();
-            return;
-        }
+            ProductAdapter adapter = (ProductAdapter) recyclerView.getAdapter();
+            assert adapter != null;
 
-        showDeleteProductConfirmationDialog(position, products, adapter);
+            List<ProductEntity> products = adapter.getProductList();
+            String listName = listNameTextView.getText().toString().trim();
+
+            List<ProductEntity> productsList = productDao.getProductsByListName(listName);
+
+            runOnUiThread(() -> {
+                if (productsList.size() <= 1 && products.size() <= 1) {
+                    Toast.makeText(this, "Devi mantenere almeno un prodotto nella lista", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                showDeleteProductConfirmationDialog(position, products, adapter);
+            });
+        }).start();
     }
 
     private void showDeleteProductConfirmationDialog(int position, List<ProductEntity> products, ProductAdapter adapter) {
